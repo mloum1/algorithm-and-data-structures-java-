@@ -35,6 +35,7 @@ function int findSecondMin(int arr[]){
 //Given an array of integers, write a function to move all O's to end
 // of it while maintainning the relative order of the non-zero elements.
 function void moveZeros(int arr[]){
+
     int n = arr.length;
     int j = 0;
     
@@ -48,6 +49,27 @@ function void moveZeros(int arr[]){
         if (arr[j] != 0){
             j++;
         }         
-
     }
 }
+
+//Q . Given an array of n-1 distinct numbers in the range 
+// of 1 to n. Find the missing number in it.
+
+// Mathematical Approach 
+// The sum of first n natural numbers = 1 + ... + n = n (n + 1)/2
+function int findMissingNumberInArr(int arr[]){
+    int n = arr.length + 1;
+    int sum = n *(n+1)/2;
+    for(int num : arr){
+        sum = sum - num;
+    }
+    return sum;
+}
+//Others methods 
+function 
+
+function 
+
+function 
+
+function
