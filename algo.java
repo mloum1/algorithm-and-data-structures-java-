@@ -32,4 +32,22 @@ function int findSecondMin(int arr[]){
     return secondMax;
 }
 
-function 
+//Given an array of integers, write a function to move all O's to end
+// of it while maintainning the relative order of the non-zero elements.
+function void moveZeros(int arr[]){
+    int n = arr.length;
+    int j = 0;
+    
+    for(int i = 0; i <n; i++){
+        //pointer that focusing at the zero elements
+        if(arr[i] != 0 && arr[j]==0){
+            int temp = arr[i];//current reading value;
+            arr[i] = arr[j]
+            arr[j] = temp;
+        }
+        if (arr[j] != 0){
+            j++;
+        }         
+
+    }
+}
