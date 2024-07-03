@@ -55,11 +55,24 @@ public class SinglyLinkedList {
         current.next = newNode;
     }
 
+    public ListNode deleteFirst(){
+        if(head == null){
+            return null;
+        }
+        ListNode temp = head ;
+        head = head.next;
+        temp.next = null;
+        return temp;
+    }
 
     //Q . Implement method to insert a node at a given position.
     // Assuming position to be valid and starting from 1.
     public void insertAtPosition(int value, int position){
         ListNode node = new ListNode(value);
+        // Check if is a valid position to insert to avoid error throw exception
+        if (position < 1 || position > findLength() + 1){
+            throw new IllegalArgumentException("Invalid position: " + position);
+        }
         if (position == 1){
            node.next = head;
            head = node; 
@@ -81,6 +94,7 @@ public class SinglyLinkedList {
         sll.insertAtPosition(10, 1);
         sll.insertAtPosition(12, 2);
         sll.insertAtPosition(8, 1);
+        sll.insertAtPosition(32, 10);
         sll.display();
         System.out.println("The length is : " + sll.findLength());
     }
