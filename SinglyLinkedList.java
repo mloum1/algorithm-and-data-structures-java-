@@ -59,11 +59,28 @@ public class SinglyLinkedList {
     //Q . Implement method to insert a node at a given position.
     // Assuming position to be valid and starting from 1.
     public void insertAtPosition(int value, int position){
-        
+        ListNode node = new ListNode(value);
+        if (position == 1){
+           node.next = head;
+           head = node; 
+        }else{
+            ListNode previous = head;
+            int count = 1;
+            while (count < position -1){
+                previous = previous.next;
+                count++;
+            }
+            ListNode current = previous.next;
+            node.next = current;
+            previous.next = node;
+        }
     }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
-        sll.insertFirst(11);
+        // sll.insertFirst(11);
+        sll.insertAtPosition(10, 1);
+        sll.insertAtPosition(12, 2);
+        sll.insertAtPosition(8, 1);
         sll.display();
         System.out.println("The length is : " + sll.findLength());
     }
