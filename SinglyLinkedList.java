@@ -23,7 +23,6 @@ public class SinglyLinkedList {
            count++;
            current = current.next; 
         }
-        System.out.println("The lenght is : " + count);
         return count;
     }
     // display node 
@@ -37,19 +36,36 @@ public class SinglyLinkedList {
         System.out.println("null");
     }
 
+    public void insertFirst(int value){
+        ListNode newNode = new ListNode(value);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void insertLast(int value){
+        ListNode newNode = new ListNode(value);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        ListNode current = head;
+        while(null != current.next){
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+
+
+    //Q . Implement method to insert a node at a given position.
+    // Assuming position to be valid and starting from 1.
+    public void insertAtPosition(int value, int position){
+        
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
-        sll.head = new ListNode(10);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(8);
-        ListNode fourth = new ListNode(11);
-
-        // connect them together to form a chain 
-        sll.head.next = second;
-        second.next = third;
-        third.next = fourth; //fourth.next becomes null
-
+        sll.insertFirst(11);
         sll.display();
-        sll.findLength();
+        System.out.println("The length is : " + sll.findLength());
     }
+
 }
