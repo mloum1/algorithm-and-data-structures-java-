@@ -43,7 +43,7 @@ public void moveZeros(int arr[]){
         //pointer that focusing at the zero elements
         if(arr[i] != 0 && arr[j]==0){
             int temp = arr[i];//current reading value;
-            arr[i] = arr[j]
+            arr[i] = arr[j];
             arr[j] = temp;
         }
         if (arr[j] != 0){
@@ -65,11 +65,22 @@ public int findMissingNumberInArr(int arr[]){
     }
     return sum;
 }
-//Others methods 
-function 
 
-function 
+// Q . Given a string, the task is check whether given string is 
+// palindrole or not.
+// Example : Given string "été"
+// Solution - it should retrun - true
+public  boolean isPalindrom(String word){
+    char[] charArr = word.toCharArray();
+    int start = 0;
+    int end = word.length() - 1;
+    while(start < end){
+        if (charArr[start] != charArr[end]){
+            return false;
+        }
+        start++;
+        end--;
+    }
+    return true;
+}
 
-function 
-
-function
