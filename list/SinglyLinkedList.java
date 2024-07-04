@@ -209,6 +209,22 @@ public class SinglyLinkedList {
         }
         return slowPtr;
     }
+    //remove duplication from sorted linked list 
+
+    public void removeDuplication(){
+        if (head == null) {
+            return;
+        }
+        ListNode current = head;
+        while(current != null && current.next != null){
+            if(current.data == current.next.data){
+                current.next = current.next.next;
+            }else{
+                current = current.next;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         // sll.insertFirst(11);
