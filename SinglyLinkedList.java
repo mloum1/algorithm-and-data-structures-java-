@@ -65,6 +65,19 @@ public class SinglyLinkedList {
         return temp;
     }
 
+    public ListNode deleteLast(){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode current = head;
+        ListNode previous = null;
+        while(current.next != null){
+            previous = current;
+            current = current.next;
+        }
+        previous.next = null;
+        return current;
+    }
     //Q . Implement method to insert a node at a given position.
     // Assuming position to be valid and starting from 1.
     public void insertAtPosition(int value, int position){
