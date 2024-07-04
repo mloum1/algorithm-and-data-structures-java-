@@ -1,3 +1,10 @@
+/**
+ * This class represents a singly linked list.
+ * 
+ * @author Loum Maniang
+ * @version 1.0
+ * @since 2024-07-04
+ */
 public class SinglyLinkedList {
 
     private ListNode head;
@@ -64,7 +71,11 @@ public class SinglyLinkedList {
         temp.next = null;
         return temp;
     }
-
+    /**
+    * Deletes the last node from the list of node.
+    * 
+    * @return the deleted last node, or the head if the list is empty or has only one node
+    */
     public ListNode deleteLast(){
         if (head == null || head.next == null){
             return head;
@@ -101,6 +112,33 @@ public class SinglyLinkedList {
             previous.next = node;
         }
     }
+    //Q. Implement method to delete a node at a given position. Assuming position to valid and starting from 1.
+    /**
+     * Deletes a node given position
+     * @param  args the position of the targetted node
+     * @throws IllegalArgumentException if the position unknown
+     * @return the new list node
+     */
+     public void deleteAtPosition(int position){
+        if (position < 1 || position > findLength() + 1){
+            throw new IllegalArgumentException("Invalid position: " + position);
+        }
+        if (position == 1){
+            head = head.next;
+        }else{
+            ListNode previous = head;
+            int count = 1;
+            while(count < position - 1){
+                previous = previous.next;
+                count++;
+            }
+
+            ListNode current = previous.next;
+            previous.next = current.next;
+        }
+
+     }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         // sll.insertFirst(11);
