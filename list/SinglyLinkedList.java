@@ -184,6 +184,9 @@ public class SinglyLinkedList {
         ListNode refPtr = head;
         int count = 0;
         while(count < n){
+            if (refPtr == null){
+                throw new IllegalArgumentException(n + "is greater than the number of the nodes in list ");
+            }
             refPtr = refPtr.next;
             count++;
         }
