@@ -154,7 +154,25 @@ public class SinglyLinkedList {
         }
         return false;
     }
+    //reverse a singly linked in java 
+    public ListNode reverseSinglyLinkedList(ListNode head){
+        if(head == null){
+            return head;
+        }
 
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
+    
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         // sll.insertFirst(11);
