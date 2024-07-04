@@ -172,7 +172,40 @@ public class SinglyLinkedList {
         }
         return previous;
     }
-    
+    //Q . how to find nth node from the end of a linked list ?
+    public ListNode getNthNodeFromEnd(int n ){
+        if(head == null){
+            return null;
+        }
+        if (n <= 0 ){
+            throw new IllegalArgumentException("Invalid value: n = " + n);
+        }
+        ListNode mainPtr = head;
+        ListNode refPtr = head;
+        int count = 0;
+        while(count < n){
+            refPtr = refPtr.next;
+            count++;
+        }
+        while(refPtr != null){
+            refPtr = refPtr.next;
+            mainPtr = mainPtr.next;
+        }
+        return mainPtr;
+    }
+
+    public ListNode getMiddleNode(){
+        if(head == null){
+            return null;
+        }
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
+        while (fastPtr != null && fastPtr.next != null) {
+           slowPtr = slowPtr.next;
+           fastPtr = fastPtr.next.next; 
+        }
+        return slowPtr;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         // sll.insertFirst(11);
