@@ -18,7 +18,9 @@ public class SinglyLinkedList {
             this.next = null;
         }
     }
-    // find the length 
+
+
+   
     public int findLength(){
         if (head == null){
             return 0;
@@ -32,7 +34,7 @@ public class SinglyLinkedList {
         }
         return count;
     }
-    // display node 
+    
     public void display(){
         ListNode current = head;
         //we use while loop because we know the end of the nodes
@@ -119,7 +121,7 @@ public class SinglyLinkedList {
      * @throws IllegalArgumentException if the position unknown
      * @return the new list node
      */
-     public void deleteAtPosition(int position){
+    public void deleteAtPosition(int position){
         if (position < 1 || position > findLength() + 1){
             throw new IllegalArgumentException("Invalid position: " + position);
         }
@@ -138,6 +140,20 @@ public class SinglyLinkedList {
         }
 
      }
+
+    public boolean find(ListNode head, int searchKey){
+        if (head == null){
+            return false;
+        }
+        ListNode current = head;
+        while(current != null){
+            if(current.data == searchKey){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
