@@ -9,8 +9,11 @@ monitor
 
 # What is the Java Virtual Machine ?
 Java compiler 
+
 JVM ==> Java Virtual Machine 
+
 JDK ==> Java developper Kit 
+
 JRE ==> Java Runtime Environment
 
 
