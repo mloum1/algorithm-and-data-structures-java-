@@ -65,11 +65,4 @@ public int findMissingNumberInArr(int arr[]){
     }
     return sum;
 }
-//Others methods 
-function 
 
-function 
-
-function 
-
-function
